@@ -8,8 +8,6 @@ const User = () => {
   const handleBack = () => {
     navigate(-1);
   };
-
-  console.log(data);
   return (
     <div>
       <h1>Name : {data.name}</h1>
