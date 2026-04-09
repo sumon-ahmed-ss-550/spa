@@ -1,9 +1,15 @@
 import React from "react";
-import { NavLink, useLoaderData } from "react-router";
+import { NavLink, useLoaderData, useNavigate } from "react-router";
 import "./users.css";
 
 const Users = () => {
   const info = useLoaderData();
+  const navigate = useNavigate();
+
+  const handleNavigate = (id) => {
+    navigate(`/users/${id}`);
+  };
+
   return (
     <div id="usersParent">
       {info.map((item) => (
@@ -12,9 +18,12 @@ const Users = () => {
           <p>Username : {item.username}</p>
           <p>Website : {item.website}</p>
           <div>
-            <NavLink to={`/users/${item.id}`}>
-              <button type="button">Show details</button>
-            </NavLink>
+            {/* <NavLink to={`/users/${item.id}`}>
+              <button type="button">Show details {item.id}</button>
+            </NavLink> */}
+            <button onClick={() => handleNavigate(item.id)}>
+              Show details
+            </button>
           </div>
         </div>
       ))}

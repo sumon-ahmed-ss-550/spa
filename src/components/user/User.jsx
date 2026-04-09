@@ -1,8 +1,14 @@
 import React from "react";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
 
 const User = () => {
   const data = useLoaderData();
+  const navigate = useNavigate();
+
+  const handleBack = () => {
+    navigate(-1);
+  };
+
   console.log(data);
   return (
     <div>
@@ -21,6 +27,7 @@ const User = () => {
           <p>Zipcode : {data.address.zipcode}</p>
         </address>
       </div>
+      <button onClick={handleBack}>Go back</button>
     </div>
   );
 };
