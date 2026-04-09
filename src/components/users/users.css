@@ -1,0 +1,11 @@
+#usersParent {
+  margin-top: 120px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+#usersCard {
+  border: 1px solid darkred;
+  padding: 16px;
+  border-radius: 6px;
+}
